@@ -1,3 +1,3 @@
 # orange-cf-bosh-cli-openstack
-docker file for CF operations clients in openstack env. 
-[TODO...]
+This project is based on `orange-cf-bosh-cli` with the addition of openstack CLI (https://github.com/orange-cloudfoundry/orange-cf-bosh-cli)
+
