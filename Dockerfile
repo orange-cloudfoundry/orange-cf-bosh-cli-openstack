@@ -5,7 +5,10 @@ USER root
 
 # Add default packages
 RUN apt-get update && \
-    apt-get install -y maven openjdk-8-jdk npm python-dev python-pip
+    apt-get install -y maven openjdk-8-jdk npm python-dev python-pip && \
+    apt-get clean && \
+    apt-get autoremove -y && \
+    apt-get purge 
 
 # Openstack CLI
 RUN export LC_ALL=C && \
@@ -33,9 +36,6 @@ RUN echo "Java `java -version  2>&1 | grep version`" >> /etc/motd && \
     echo "  * Swift `swift --version 2>&1 | awk '{print $2}'` - Object Storage API"  >> /etc/motd && \
     echo "  * Heat `heat --version 2>&1` - Orchestration API"  >> /etc/motd && \
     echo "" >> /etc/motd && \
-    apt-get clean && \
-    apt-get autoremove -y && \
-    apt-get purge && \
     find /var/log -type f -delete && \
     rm -Rf /tmp/* && \
     touch /var/log/lastlog && \
