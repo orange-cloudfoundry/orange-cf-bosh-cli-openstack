@@ -13,11 +13,7 @@ RUN apt-get update && \
 # Openstack CLI
 RUN export LC_ALL=C && \
     pip install --upgrade pip && \
-    pip install python-openstackclient && \
-    pip install python-neutronclient && \
-    pip install python-magnumclient && \
-    pip install python-swiftclient && \
-    pip install python-heatclient
+    pip install python-openstackclient
 
 # Final settings & Cleanup
 RUN echo "Java `java -version  2>&1 | grep version`" >> /etc/motd && \
