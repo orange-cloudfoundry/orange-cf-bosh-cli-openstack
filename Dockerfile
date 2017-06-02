@@ -27,10 +27,6 @@ RUN echo "Java `java -version  2>&1 | grep version`" >> /etc/motd && \
     echo "  * Nova `nova --version 2>&1` - Compute API and extensions"  >> /etc/motd && \
     echo "  * Glance `glance --version 2>&1` - Image service API"  >> /etc/motd && \
     echo "  * Cinder `cinder --version 2>&1` - Block Storage API and extensions"  >> /etc/motd && \
-    echo "  * Neutron `neutron --version 2>&1` - Networking API"  >> /etc/motd && \
-    echo "  * Magnum `magnum --version 2>&1` - Container Infrastructure Management service API"  >> /etc/motd && \
-    echo "  * Swift `swift --version 2>&1 | awk '{print $2}'` - Object Storage API"  >> /etc/motd && \
-    echo "  * Heat `heat --version 2>&1` - Orchestration API"  >> /etc/motd && \
     echo "" >> /etc/motd && \
     find /var/log -type f -delete && \
     rm -Rf /tmp/* && \
