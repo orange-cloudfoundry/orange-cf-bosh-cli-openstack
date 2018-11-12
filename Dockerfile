@@ -5,7 +5,7 @@ USER root
 
 # Add default packages
 RUN apt-get update && \
-    apt-get install -y maven gradle openjdk-8-jdk npm python-dev python-pip jq && \
+    apt-get install -y maven gradle openjdk-8-jdk python-dev python-pip jq && \
     apt-get clean && \
     apt-get autoremove -y && \
     apt-get purge 
